@@ -41,13 +41,35 @@ header a {
   color: var(--off-white);
   text-decoration: none;
   cursor: pointer;
-  transition: 400ms;
+  transition: 500ms;
 }
 
 header a:hover {
   color: var(--text-color);
-  transform: scale(.95);
-  text-decoration: underline dotted 5px var(--text-color);
+  transform: scale(.90);
+  text-decoration: underline dotted 5px;
+}
+
+.logo {
+  animation: logo 5s infinite;
+}
+
+@keyframes logo {
+  0% {
+    transform: translateX(0px) scale(1);
+  }
+  25% {
+    transform: translateX(30px) scale(1);
+  }
+  50% {
+    transform: translateX(0px) scale(1);
+  }
+  75% {
+    transform: translateX(-30px) scale(1);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
 }
 /* end header link animations */
 
@@ -55,7 +77,7 @@ header a:hover {
 main a {
   color: var(--danger-color);
   transition: 200ms;
-  animation: main-links 5s infinite;
+  animation: main-links 2s infinite;
 }
 
 main a:hover {
@@ -63,14 +85,11 @@ main a:hover {
 }
 
 @keyframes main-links {
-  25% {
+  33% {
     color: var(--secondary-color);
   }
-  50% {
-    color: var(--danger-color);
-  }
-  75% {
-    color: var(--secondary-color);
+  66% {
+    color: var(--warn-color);
   }
   100% {
     color: var(--danger-color); 
