@@ -39,13 +39,44 @@ header {
 header a {
   font-size: 1.5rem;
   color: var(--off-white);
+  text-decoration: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+header a:hover {
+  color: var(--text-color);
+  transform: scale(.95);
+  text-decoration: underline dotted 5px var(--text-color);
 }
 /* end header link animations */
 
 /* article link transitions */
 main a {
   color: var(--danger-color);
+  transition: 200ms;
+  animation: main-links 5s infinite;
 }
+
+main a:hover {
+  font-size: 1.25rem;
+}
+
+@keyframes main-links {
+  25% {
+    color: var(--secondary-color);
+  }
+  50% {
+    color: var(--danger-color);
+  }
+  75% {
+    color: var(--secondary-color);
+  }
+  100% {
+    color: var(--danger-color); 
+  }
+}
+
 /* end article link transitions */
 
 main > article, nav{
@@ -93,6 +124,7 @@ section.hero > .call-to-action {
   margin: 0;
 }
 
+/* Hero Section Animation Start */
 section.hero > button {
   background-color: var(--secondary-color);
   border: none;
@@ -100,7 +132,36 @@ section.hero > button {
   border-radius: 12px;
   text-transform: uppercase;
   cursor: pointer;
+  transition: 400ms;
+  animation: hero-button 10s infinite;
 }
+
+@keyframes hero-button {
+  25% {      
+    transform: translateY(-5px) rotate(45deg);
+  }
+  29% {
+    transform: translateY(-5px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+  79% {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+  100%{
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+section.hero > button:hover {
+  background-color: var(--primary-color);
+  color: var(--off-white);
+}
+/* Hero Section Animation End */
 
 main article {
   padding: 48px 96px;
